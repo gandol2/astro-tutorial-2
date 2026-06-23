@@ -1,22 +1,10 @@
 ---
-// TypeScript (TS)
 interface Props{
     preTitle: string;
     title: string;
     href?: string;
-    size3333: any;
 }
-
-const { preTitle, title, href="#", size3333 } = Astro.props;
-// const preTitle = Astro.props.preTitle;
-// const title = Astro.props.title;
-// const href = Astro.props.href;
-
-var tmp = "안녕하세요";
-
-// var a : string = tmp + " 김성식 입니다!";
-var a : string = `${tmp} 김성식 입니다. 10 + 20 = ${10+20}`;
-console.log(a);
+const { preTitle, title, href="#" } = Astro.props;
 ---
 
 <li>
