@@ -5,9 +5,16 @@ interface Props{
     href?: string;
 }
 const { preTitle, title, href="#" } = Astro.props;
+
+// href = "/page1"
+// Astro.url.pathname = "/page1" | "/page1/about"  | "/page1/about/test"
+// const isActive = href == Astro.url.pathname;
+const isActive = Astro.url.pathname.startsWith(href);
+console.log(Astro.url.pathname)
+
 ---
 
-<li>
+<li class={ isActive ? "active" : "" }>
     <a href={href}>
         <span>{preTitle}</span>
         <span>{title}</span>
@@ -16,6 +23,9 @@ const { preTitle, title, href="#" } = Astro.props;
 </li>
 
 <style>
+    li.active{
+        border-bottom: 5px solid #5E83AF;
+    }
     li{
         position: relative;
     }
