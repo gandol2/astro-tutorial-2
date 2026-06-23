@@ -1,65 +1,65 @@
 ---
-interface Props{
-    preTitle: string;
-    title: string;
-    href?: string;
-    className?: string;
+interface Props {
+	preTitle: string;
+	title: string;
+	href?: string;
+	className?: string;
 }
-const { preTitle, title, href="#", className } = Astro.props;
+const { preTitle, title, href = "#", className } = Astro.props;
 
 // href = "/page1"
 // Astro.url.pathname = "/page1" | "/page1/about"  | "/page1/about/test"
 // const isActive = href == Astro.url.pathname;
 // const isActive = Astro.url.pathname.startsWith(href);
-console.log(Astro.url.pathname)
-
+// console.log(Astro.url.pathname)
 ---
+
 {/* 프래그먼트 */}
 
 <Fragment>
-    <!-- <li class={ isActive ? "active" : "" }> -->
-     <!-- <li class:list={ [isActive ? "active" : "", "aaa", "bbb"] }> -->
-      <li class:list={["active", "aaa", "bbb", className]}>
-        <a href={href}>
-            <slot name="pre-title"/>
-            <span>{preTitle}</span>
-            <slot name="mid-title"/>
-            <span>{title}</span>
-            <slot />
-        </a>
-    <div class="dot"></div>
-    </li>
+	<!-- <li class={ isActive ? "active" : "" }> -->
+	<!-- <li class:list={ [isActive ? "active" : "", "aaa", "bbb"] }> -->
+	<li class:list={["active", "aaa", "bbb", className]}>
+		<a href={href}>
+			<slot name="pre-title" />
+			<span>{preTitle}</span>
+			<slot name="mid-title" />
+			<span>{title}</span>
+			<slot />
+		</a>
+		<div class="dot"></div>
+	</li>
 </Fragment>
 
 <style>
-    li.active{
-        border-bottom: 5px solid #5E83AF;
-    }
-    li{
-        position: relative;
-    }
-    .dot{
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background-color: red;
-        right: 0;
-        top: 0;
-        border-radius: 100%;
-    }
-    a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px 10px;
-        text-decoration: none;
-        color: black;
-    }
-    a span:first-child{
-        font-weight: 300;
-    }
+	li.active {
+		border-bottom: 5px solid #5e83af;
+	}
+	li {
+		position: relative;
+	}
+	.dot {
+		position: absolute;
+		width: 4px;
+		height: 4px;
+		background-color: red;
+		right: 0;
+		top: 0;
+		border-radius: 100%;
+	}
+	a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0px 10px;
+		text-decoration: none;
+		color: black;
+	}
+	a span:first-child {
+		font-weight: 300;
+	}
 
-    a span:last-child{
-        font-weight: bold;
-    }
+	a span:last-child {
+		font-weight: bold;
+	}
 </style>

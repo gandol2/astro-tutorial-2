@@ -2,7 +2,7 @@
 import "../css/debug.css";
 import NavTypeB from "./../components/navs/NavType_B.astro";
 
-const rawHTMLString = "Hello <strong>World</strong>"
+const rawHTMLString = "Hello <strong>World</strong>";
 ---
 
 <html lang="en">
@@ -25,8 +25,5 @@ const rawHTMLString = "Hello <strong>World</strong>"
 			<h1 set:html={rawHTMLString} />
 			<!-- 출력 결과: <h1>Hello <strong>World</strong></h1> -->
 		</div>
-
-		
-
 	</body>
 </html>

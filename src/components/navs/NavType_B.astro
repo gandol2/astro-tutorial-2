@@ -1,33 +1,37 @@
 ---
 import MenuLink from "./MenuLink.astro";
-
 ---
+
 <nav>
-    <ul>        
-        <MenuLink className="zzzzzzzzz" preTitle="서울대 출신," title="치과의원" href="/page1">
-            <span slot="pre-title">여기는 이전입니다</span>
-            <div>안녕하세요</div>
-            <div slot="mid-title">----</div>
-            <span>반갑습니다</span>
+	<ul>
+		<MenuLink
+			className="zzzzzzzzz"
+			preTitle="서울대 출신,"
+			title="치과의원"
+			href="/page1"
+		>
+			<span slot="pre-title">여기는 이전입니다</span>
+			<div>안녕하세요</div>
+			<div slot="mid-title">----</div>
+			<span>반갑습니다</span>
+		</MenuLink>
 
-        </MenuLink>
-
-        <MenuLink preTitle="일상 그대로," title="투명 교정" href="/page2"  />
-        <MenuLink preTitle="정교한 이동," title="브라켓 교정" href="/page3"/>
-        <MenuLink preTitle="골격까지 바른 성장," title="소아 교정" href="/page4" />
-        <MenuLink preTitle="나에게 맞춰 정교한," title="청소년/성인 교정" />
-        <MenuLink preTitle="잇몸을 살리는" title="중장년 교정" />
-        <MenuLink preTitle="단기간 빠르게," title="부분교정/라미네이트" />
-        <MenuLink preTitle="편안한 방문," title="오시는 길"/>
-    </ul>
+		<MenuLink preTitle="일상 그대로," title="투명 교정" href="/page2" />
+		<MenuLink preTitle="정교한 이동," title="브라켓 교정" href="/page3" />
+		<MenuLink preTitle="골격까지 바른 성장," title="소아 교정" href="/page4" />
+		<MenuLink preTitle="나에게 맞춰 정교한," title="청소년/성인 교정" />
+		<MenuLink preTitle="잇몸을 살리는" title="중장년 교정" />
+		<MenuLink preTitle="단기간 빠르게," title="부분교정/라미네이트" />
+		<MenuLink preTitle="편안한 방문," title="오시는 길" />
+	</ul>
 </nav>
 <style>
-    ul {
-        display: flex;
-        list-style-type: none;        
-    }
-    ul a{
-        text-decoration: none;    
-        color:red;
-    }
+	ul {
+		display: flex;
+		list-style-type: none;
+	}
+	ul a {
+		text-decoration: none;
+		color: red;
+	}
 </style>
