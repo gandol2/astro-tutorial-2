@@ -1,0 +1,58 @@
+---
+// TypeScript (TS)
+interface Props{
+    preTitle: string;
+    title: string;
+    href?: string;
+    size3333: any;
+}
+
+const { preTitle, title, href="#", size3333 } = Astro.props;
+// const preTitle = Astro.props.preTitle;
+// const title = Astro.props.title;
+// const href = Astro.props.href;
+
+var tmp = "안녕하세요";
+
+// var a : string = tmp + " 김성식 입니다!";
+var a : string = `${tmp} 김성식 입니다. 10 + 20 = ${10+20}`;
+console.log(a);
+---
+
+<li>
+    <a href={href}>
+        <span>{preTitle}</span>
+        <span>{title}</span>
+    </a>
+    <div class="dot"></div>
+</li>
+
+<style>
+    li{
+        position: relative;
+    }
+    .dot{
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: red;
+        right: 0;
+        top: 0;
+        border-radius: 100%;
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 10px;
+        text-decoration: none;
+        color: black;
+    }
+    a span:first-child{
+        font-weight: 300;
+    }
+
+    a span:last-child{
+        font-weight: bold;
+    }
+</style>
