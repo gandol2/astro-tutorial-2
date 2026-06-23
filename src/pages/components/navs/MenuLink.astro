@@ -3,8 +3,9 @@ interface Props{
     preTitle: string;
     title: string;
     href?: string;
+    className?: string;
 }
-const { preTitle, title, href="#" } = Astro.props;
+const { preTitle, title, href="#", className } = Astro.props;
 
 // href = "/page1"
 // Astro.url.pathname = "/page1" | "/page1/about"  | "/page1/about/test"
@@ -16,7 +17,9 @@ console.log(Astro.url.pathname)
 {/* 프래그먼트 */}
 
 <Fragment>
-    <li class={ isActive ? "active" : "" }>
+    <!-- <li class={ isActive ? "active" : "" }> -->
+     <!-- <li class:list={ [isActive ? "active" : "", "aaa", "bbb"] }> -->
+      <li class:list={["active", "aaa", "bbb", className]}>
         <a href={href}>
             <slot name="pre-title"/>
             <span>{preTitle}</span>
