@@ -1,6 +1,10 @@
 ---
 import "../css/debug.css";
+import "aos/dist/aos.css"; // ← AOS CSS import 추가
 import PHPCode from "../components/PHPCode.astro";
+import SwiperWarp from "../components/SwiperWarp.astro";
+
+import { Schema } from 'astro-seo-schema';
 ---
 
 <html lang="en">
@@ -11,6 +15,130 @@ import PHPCode from "../components/PHPCode.astro";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<script>
+			import AOS from "aos";
+			AOS.init();
+		</script>
+
+		<Schema
+			item={{
+				'@context': 'https://schema.org',
+				'@type': 'Hospital',
+				'name': '(입력필요)',
+				'alternateName': '(입력필요)',
+				'description': '(입력필요)',
+				'url': '(입력필요)',
+				'logo': '(입력필요)',
+				'image': '(입력필요)',
+				'telephone': '(입력필요)',
+				'faxNumber': '(입력필요)',
+				'email': '(입력필요)',
+				'address': {
+					'@type': 'PostalAddress',
+					'streetAddress': '(입력필요)',
+					'addressLocality': '(입력필요)',
+					'addressRegion': '(입력필요)',
+					'postalCode': '(입력필요)',
+					'addressCountry': 'KR',
+				},
+				'geo': {
+					'@type': 'GeoCoordinates',
+					'latitude': 0,  /* (입력필요) 위도 숫자 */
+					'longitude': 0, /* (입력필요) 경도 숫자 */
+				},
+				'hasMap': '(입력필요)',
+				'openingHoursSpecification': [
+					{
+						'@type': 'OpeningHoursSpecification',
+						'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+						'opens': '(입력필요)',
+						'closes': '(입력필요)',
+					},
+					{
+						'@type': 'OpeningHoursSpecification',
+						'dayOfWeek': 'Saturday',
+						'opens': '(입력필요)',
+						'closes': '(입력필요)',
+					},
+				],
+				'department': [
+					{
+						'@type': 'MedicalClinic',
+						'name': '(입력필요)',
+						'description': '(입력필요)',
+						'medicalSpecialty': 'PrimaryCare', /* (입력필요) 진료과목 enum */
+					},
+				],
+				'medicalSpecialty': 'PrimaryCare', /* (입력필요) 진료과목 enum */
+				'availableService': [
+					{
+						'@type': 'MedicalProcedure',
+						'name': '(입력필요)',
+						'description': '(입력필요)',
+					},
+				],
+				'founder': {
+					'@type': 'Person',
+					'name': '(입력필요)',
+				},
+				'employee': [
+					{
+						'@type': 'Physician',
+						'name': '(입력필요)',
+						'jobTitle': '(입력필요)',
+						'medicalSpecialty': 'PrimaryCare', /* (입력필요) 진료과목 enum */
+						'image': '(입력필요)',
+					},
+				],
+				'sameAs': [
+					'(입력필요 - 네이버 플레이스 URL)',
+					'(입력필요 - 카카오맵 URL)',
+					'(입력필요 - Instagram URL)',
+					'(입력필요 - Facebook URL)',
+				],
+				'priceRange': '(입력필요)',
+				'currenciesAccepted': 'KRW',
+				'paymentAccepted': '(입력필요)',
+				'isAcceptingNewPatients': true,
+				'aggregateRating': {
+					'@type': 'AggregateRating',
+					'ratingValue': '(입력필요)',
+					'reviewCount': '(입력필요)',
+					'bestRating': '5',
+				},
+				'review': [
+					{
+						'@type': 'Review',
+						'author': {
+							'@type': 'Person',
+							'name': '(입력필요)',
+						},
+						'reviewRating': {
+							'@type': 'Rating',
+							'ratingValue': '(입력필요)',
+							'bestRating': '5',
+						},
+						'reviewBody': '(입력필요)',
+					},
+				],
+				'areaServed': {
+					'@type': 'City',
+					'name': '(입력필요)',
+				},
+				'amenityFeature': [
+					{
+						'@type': 'LocationFeatureSpecification',
+						'name': '주차장',
+						'value': true, /* (입력필요) true 또는 false */
+					},
+					{
+						'@type': 'LocationFeatureSpecification',
+						'name': '무료 Wi-Fi',
+						'value': true, /* (입력필요) true 또는 false */
+					},
+				],
+			}}
+		/>
 	</head>
 	<body>
 		<h1>Astro</h1>
@@ -34,5 +162,16 @@ import PHPCode from "../components/PHPCode.astro";
             <?php }  ?>`}
 			/>
 		</div>
+
+		<SwiperWarp />
+
+		<div style="height: 1000px;"></div>
+		<div data-aos="fade-up">안녕?</div>
 	</body>
 </html>
+
+<style>
+	body {
+		height: 20000px;
+	}
+</style>

@@ -1,0 +1,26 @@
+---
+import { Swiper, SwiperWrapper, SwiperSlide } from "astro-swiper";
+import { SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
+// import type { AstroSwiperType } from "astro-swiper";
+
+// const astroSwiperOptions: AstroSwiperType = {
+// options: {
+//   loop: true,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+// },
+// };
+---
+
+<Swiper>
+	<SwiperWrapper>
+		<SwiperSlide> <img src="https://picsum.photos/400/300" /> </SwiperSlide>
+		<SwiperSlide> <img src="https://picsum.photos/500/300" /> </SwiperSlide>
+		<SwiperSlide> <img src="https://picsum.photos/600/300" /> </SwiperSlide>
+	</SwiperWrapper>
+
+	<SwiperButtonPrev />
+	<SwiperButtonNext />
+</Swiper>
