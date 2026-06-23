@@ -4,7 +4,14 @@ import MenuLink from "./MenuLink.astro";
 ---
 <nav>
     <ul>        
-        <MenuLink preTitle="서울대 출신," title="dd" href="/page1" />
+        <MenuLink preTitle="서울대 출신," title="치과의원" href="/page1">
+            <span slot="pre-title">여기는 이전입니다</span>
+            <div>안녕하세요</div>
+            <div slot="mid-title">----</div>
+            <span>반갑습니다</span>
+
+        </MenuLink>
+
         <MenuLink preTitle="일상 그대로," title="투명 교정" href="/page2"  />
         <MenuLink preTitle="정교한 이동," title="브라켓 교정" href="/page3"/>
         <MenuLink preTitle="골격까지 바른 성장," title="소아 교정" href="/page4" />
