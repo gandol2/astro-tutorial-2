@@ -1,9 +1,5 @@
 ---
-import { Image } from "astro:assets";
 import "../css/debug.css";
-import NavTypeB from "./../components/navs/NavType_B.astro";
-
-const rawHTMLString = "Hello <strong>World</strong>";
 ---
 
 <html lang="en">
@@ -14,30 +10,14 @@ const rawHTMLString = "Hello <strong>World</strong>";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-		<style>
-		.temp{
-			width: 100%;
-		}
-	</style>
 	</head>
 	<body>
 		<h1>Astro</h1>
 
-		<NavTypeB />
-
-		<div >
-			<h1>{rawHTMLString}</h1>
-			<!-- 출력 결과: <h1>Hello &lt;strong&gt;World&lt;/strong&gt;</h1> -->
-			<h1 set:html={rawHTMLString} />
-			<!-- 출력 결과: <h1>Hello <strong>World</strong></h1> -->
-		</div>
-
-		<!-- <img src="https://picsum.photos/200/300"/> -->
-		 <div class="temp" debug>
-			<Image src="https://picsum.photos/200/300" alt="A bird." width="500" height="500" fit="" position=""/>
-		</div>
-
+		<span>여기는 PHP코드가 들어갈 자리 입니다.</span>
+		<Fragment
+			set:html={`<?php echo "PHP가 실행중입니다 : " . date('Y-m-d H:i:s');  ?>`}
+		/>
+		
 	</body>
-	
 </html>
-
